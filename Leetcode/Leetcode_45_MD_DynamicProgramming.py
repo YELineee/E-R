@@ -5,15 +5,8 @@ class Solution:
         if len(nums) == 1:
             return 0
         else:
-            dp = [0] * len(nums)
-            dp[0] = 0
-            for i in range(1, len(nums)):
-                block = 0
-                for j in range(block,i):
-                    if dp[j] != 0 and j + nums[j] >= i:
-                        dp[i] = dp[j] + 1
-                        block = j
-                        break
-            return dp[-1]
-
+            max = len(nums) - 1
+            min = 1
+            while max >= min:
+                
 print(Solution().jump(nums))
